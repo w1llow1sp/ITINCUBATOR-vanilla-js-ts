@@ -68,7 +68,7 @@ test('test city should contains 3 houses', () => {
  test('test city should contains hospital and fire station', () => {
      //action
 
-     //если метод filter не найдет в массиве обьект с именем -- вернет undefind.
+     //если метод 04-filter не найдет в массиве обьект с именем -- вернет undefind.
      //если найдет -- вернет {...}
      let result1 = isContainGovermentBuildingName(city,'hospital')
 
