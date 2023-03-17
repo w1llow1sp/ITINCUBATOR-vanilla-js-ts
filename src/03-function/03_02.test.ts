@@ -6,54 +6,49 @@ let city:CityType
 
 
 beforeEach(()=> {
-    city = {
-        title:'Yoshar-Ola',
-        houses:[
-            {
-                id:1,
-                title: 'House1',
-                address: "Pushkina street",
-                repaired:false
-            },
-            {
-                id:2,
-                title: 'House2',
-                address: "Marksa street",
-                repaired:false
-            },
-            {
-                id:3,
-                title: 'House3',
-                address: "Lenina street",
-                repaired:false
-            },
-        ],
-        govermentBuildings:[
-            {
-                id:1,
-                title: 'hospital',
-                address: "Gryaznova street",
-                budget:200000,
-                staffCount:200
-            },
-            {
-                id:2,
-                title: 'fire station',
-                address: "Truda street",
-                budget:10000,
-                staffCount:200
-            },
-            {
-                id:1,
-                title: 'school',
-                address: "Moscovskaya street",
-                budget:40000,
-                staffCount:30
-            },
-        ],
-        citizenNumbers:100000
-    }
-})
+        city = {
+            title: 'New York',
+            houses: [
+                {
+                    id: 1,
+                    buildedAt: 2012, repaired: false,
+                    address: {
+                        number: 100,
+                        street: {title: 'White street'}
+                    }
+                },
+                {
+                    id: 2,
+                    buildedAt: 2008, repaired: false,
+                    address: {
+                        number: 100,
+                        street: {title: 'Happy street'}
+                    }
+                },
+                {
+                    id: 3,
+                    buildedAt: 2020, repaired: false,
+                    address: {
+                        number: 101,
+                        street: {title: 'Happy street'}
+                    }
+                },
+            ],
+            govermentBuildings: [
+                {
+                    type: 'HOSPITAL',
+                    address: {street: {title: 'Central Str'}, number: 12},
+                    budget: 200000, staffCount: 200
+                },
+                {
+                    type: 'FIRE-STATION',
+                    address: {street: {title: 'South Str'}, number: 12},
+                    budget: 500000, staffCount: 1000
+                }
+            ],
+            citizensNumber:100000
+        }
+    })
 
 //01.создайте в отдельном файле функцию, чтобы тесты прошли
 test('test city should contains 3 houses', () => {

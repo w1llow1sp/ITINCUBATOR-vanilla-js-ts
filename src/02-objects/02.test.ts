@@ -5,51 +5,46 @@ let city : CityType;
 
 beforeEach(()=> {
     city = {
-        title:'Yoshar-Ola',
-        houses:[
+        title: 'New York',
+        houses: [
             {
-                id:1,
-                title: 'House1',
-                address: "Pushkina street",
-                repaired:false
+                id: 1,
+                buildedAt: 2012, repaired: false,
+                address: {
+                    number: 100,
+                    street: {title: 'White street'}
+                }
             },
             {
-                id:2,
-                title: 'House2',
-                address: "Marksa street",
-                repaired:false
+                id: 2,
+                buildedAt: 2008, repaired: false,
+                address: {
+                    number: 100,
+                    street: {title: 'Happy street'}
+                }
             },
             {
-                id:1,
-                title: 'House3',
-                address: "Lenina street",
-                repaired:false
-            },
-        ],
-        govermentBuildings:[
-            {
-                id:1,
-                title: 'hospital',
-                address: "Gryaznova street",
-                budget:200000,
-                staffCount:200
-            },
-            {
-                id:2,
-                title: 'fire station',
-                address: "Truda street",
-                budget:10000,
-                staffCount:200
-            },
-            {
-                id:1,
-                title: 'school',
-                address: "Moscovskaya street",
-                budget:40000,
-                staffCount:30
+                id: 3,
+                buildedAt: 2020, repaired: false,
+                address: {
+                    number: 101,
+                    street: {title: 'Happy street'}
+                }
             },
         ],
-        citizenNumbers:100000
+        govermentBuildings: [
+            {
+                type: 'HOSPITAL',
+                address: {street: {title: 'Central Str'}, number: 12},
+                budget: 200000, staffCount: 200
+            },
+            {
+                type: 'FIRE-STATION',
+                address: {street: {title: 'South Str'}, number: 12},
+                budget: 500000, staffCount: 1000
+            }
+        ],
+        citizensNumber:100000
     }
 })
 
@@ -71,11 +66,11 @@ test('test city should contains 3 houses', () => {
      //если метод 04-filter не найдет в массиве обьект с именем -- вернет undefind.
      //если найдет -- вернет {...}
      const result1 = city.govermentBuildings.filter(item => {
-        return item.title === 'fire station'
+        return item.type === 'FIRE-STATION'
      })
 
      const result2 = city.govermentBuildings.filter(item => {
-         return item.title === 'hospital'
+         return item.type === 'HOSPITAL'
      })
 
 

@@ -1,5 +1,5 @@
 import {student, studentType} from "../02-objects/02";
-import {CityType, govermentBuildingsType} from "../02-objects/02_02";
+import {CityType,} from "../02-objects/02_02";
 
 
 
@@ -29,7 +29,7 @@ export const isContainsSomeHouses =(city:CityType,num:number) => {
 
 export const isContainGovermentBuildingName = (city:CityType, buildingName:string ) => {
     let result = city.govermentBuildings.filter(building => {
-         building.title === buildingName
+         building.type === buildingName
     })
   return  typeof result === 'object'
         ? true
